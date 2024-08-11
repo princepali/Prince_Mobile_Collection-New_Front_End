@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Prince_Mobile_Collection</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
 </head>
-<body>
+<body ng-app="app">
     <header>
         <!-- Header Navbar -->
         <nav class="navbar navbar-expand-lg bg-dark">
@@ -25,25 +24,32 @@
                             <a class="nav-link text-white" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Products</a>
+                            <a class="nav-link text-white" asp-controller="Product" asp-action="Index">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">About</a>
+                            <a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#loginSignupModal">Login/SignUp</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#">Contact</a>
                         </li>
                     </ul>
+                    <form class="d-flex mx-auto" role="search">
+                        <input class="form-control me-2 rounded-pill bg-white" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light rounded-pill" type="submit">Search</button>
+                    </form>
                 </div>
             </div>
         </nav>
     </header>
 
-            @RenderBody()
+
+    @RenderBody()
+    @await Html.PartialAsync("/Views/Shared/Account/_LoginPartial.cshtml")
+
 
 
     <!-- Footer -->
-    <footer class="footer-custom mt-auto text-center py-3">
+    <footer class="bg-dark text-white mt-auto text-center pt-3">
         <div class="container">
             <p>&copy; 2024 Mobile & Accessories. All rights reserved.</p>
             <div>
@@ -54,7 +60,12 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/angularjs/angular.min.js"></script>
+    <script src="~/js/app/app.js"></script>
+    <script src="~/js/controller/productctrl.js"></script>
+    <script src="~/js/controller/accountctrl.js"></script>
+    <script src="~/js/services/productservice.js"></script>
+    <script src="~/js/services/accountservice.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

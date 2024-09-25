@@ -1,3 +1,43 @@
 ﻿.navbar-brand img {
     max-height: 40px; /* Adjust this value as needed */
 }
+.card-img-top {
+    height: 300px; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensures the image covers the entire space, cropping if necessary */
+    width: 100%; /* Ensures the image spans the full width of the container */
+}
+/*footer section starts*/
+
+/* Adjusting padding, spacing, and font size */
+footer {
+    background-color: #1d1d1d; /* Darker background for contrast */
+    color: #f8f9fa; /* Slightly off-white text */
+    padding-top: 20px;
+    padding-bottom: 15px;
+    font-size: 16px;
+}
+
+    footer a {
+        transition: color 0.3s ease;
+    }
+
+/* Adding hover effect for links */
+.hover-link:hover {
+    color: #17a2b8; /* Soft teal hover color */
+}
+
+/* Increasing spacing between elements */
+footer .container p {
+    margin-bottom: 10px;
+}
+
+/* Styling the footer links */
+footer a {
+    font-weight: 500;
+}
+
+/* Subtle border styling for separation */
+.border-top {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+/*footer section ends*/

@@ -6,6 +6,9 @@
     object-fit: cover; /* Ensures the image covers the entire space, cropping if necessary */
     width: 100%; /* Ensures the image spans the full width of the container */
 }
+.bodyBgColor {
+    background-color: #f3f5f6;
+}
 /*footer section starts*/
 
 /* Adjusting padding, spacing, and font size */
